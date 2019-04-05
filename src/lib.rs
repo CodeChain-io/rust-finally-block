@@ -14,29 +14,31 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-use std::ops::{Drop, FnMut};
+use std::ops::{Drop, FnOnce};
 
 pub struct Finally<F>
 where
-    F: FnMut(),
+    F: FnOnce(),
 {
-    f: F,
+    f: Option<F>,
 }
 
 impl<F> Drop for Finally<F>
 where
-    F: FnMut(),
+    F: FnOnce(),
 {
     fn drop(&mut self) {
-        (self.f)();
+        if let Some(f) = self.f.take() {
+            f()
+        }
     }
 }
 
 pub fn finally<F>(f: F) -> Finally<F>
 where
-    F: FnMut(),
+    F: FnOnce(),
 {
-    Finally { f }
+    Finally { f: Some(f) }
 }
 
 #[cfg(test)]

@@ -1,4 +1,9 @@
 [package]
 name = "finally"
 version = "0.1.0"
-authors = ["CodeChain Team <codechain@kodebox.io>"]
+authors = ["Seulgi Kim <seulgi.kim@kodebox.io>"]
+edition = "2018"
+repository = "http://github.com/CodeChain-io/rust-final-block"
+keywords = ["control", "raii", "block"]
+
+[dependencies]

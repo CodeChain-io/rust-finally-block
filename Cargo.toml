@@ -4,6 +4,7 @@ version = "0.1.1"
 authors = ["Seulgi Kim <seulgi.kim@kodebox.io>"]
 edition = "2018"
 license = "MIT"
+readme = "README.md"
 repository = "http://github.com/CodeChain-io/rust-finally-block"
 keywords = ["control", "raii", "finally", "block"]
 description = """

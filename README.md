@@ -1,7 +1,7 @@
 # finally-block [![Build Status](https://travis-ci.com/CodeChain-io/rust-finally-block.svg?branch=master)](https://travis-ci.com/CodeChain-io/rust-finally-block) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Final block is a block that is executed when it dropped.
-It helps a user to write the deferred statements that should be executed even some statements return early.
+Finally block is a block that is executed when it's dropped.
+It helps a user write the deferred statements that should be executed, even when some statements return early.
 
 ```rust
 function f(flag: &AtomicBool) -> Option<()> {

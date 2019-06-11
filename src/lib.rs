@@ -1,4 +1,6 @@
-use std::ops::{Drop, FnOnce};
+#![no_std]
+
+use core::ops::{Drop, FnOnce};
 
 pub struct Finally<F>
 where
@@ -28,7 +30,7 @@ where
 #[cfg(test)]
 mod tests {
     use super::finally;
-    use std::sync::atomic::{AtomicUsize, Ordering};
+    use core::sync::atomic::{AtomicUsize, Ordering};
 
     #[test]
     fn executed_on_drop() {

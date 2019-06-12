@@ -1,6 +1,6 @@
 [package]
 name = "finally-block"
-version = "0.1.1"
+version = "0.2.0"
 authors = ["Seulgi Kim <seulgi.kim@kodebox.io>"]
 edition = "2018"
 license = "MIT"

@@ -4,8 +4,7 @@ use core::ops::{Drop, FnOnce};
 
 pub struct Finally<F>
 where
-    F: FnOnce(),
-{
+    F: FnOnce(), {
     f: Option<F>,
 }
 
@@ -22,9 +21,10 @@ where
 
 pub fn finally<F>(f: F) -> Finally<F>
 where
-    F: FnOnce(),
-{
-    Finally { f: Some(f) }
+    F: FnOnce(), {
+    Finally {
+        f: Some(f),
+    }
 }
 
 #[cfg(test)]
